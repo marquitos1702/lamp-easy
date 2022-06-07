@@ -15,7 +15,7 @@ services:
             - persistent:/var/lib/mysql
         networks:
             - default
-    www:
+    pagina:
         build: .
         ports: 
             - "80:80"
