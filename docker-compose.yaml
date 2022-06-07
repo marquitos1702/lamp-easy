@@ -9,17 +9,7 @@ services:
         links:
             - database
         networks:
-            - default
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        links: 
-            - database:database
-        ports:
-            - 8000:80
-        environment:
-            MYSQL_USER: test
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            - default  
 database:
         image: mysql
         ports: 
@@ -35,6 +25,16 @@ database:
             - persistent:/var/lib/mysql
         networks:
             - default
+ phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links: 
+            - database:database
+        ports:
+            - 8000:80
+        environment:
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
+            MYSQL_ROOT_PASSWORD: test            
    
 volumes:
     persistent:
