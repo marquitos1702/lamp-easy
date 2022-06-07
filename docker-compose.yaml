@@ -1,6 +1,8 @@
 version: "3.8"
 services:
-    database:
+    
+    
+database:
         image: mysql
         ports: 
             - "3306:3306"
