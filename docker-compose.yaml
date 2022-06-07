@@ -7,10 +7,10 @@ services:
         volumes:
             - ./www:/var/www/html
         links:
-            - database
+            - db
         networks:
             - default
-    database:
+    db:
         image: mysql
         ports: 
             - "3306:3306"
@@ -28,7 +28,7 @@ services:
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         links: 
-            - database:database
+            - db:db
         ports:
             - 8000:80
         environment:
