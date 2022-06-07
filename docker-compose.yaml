@@ -3,7 +3,7 @@ services:
     www:
         build: .
         ports: 
-            - "8000:80"
+            - "80:80"
         volumes:
             - ./pagina:/var/www/html
         links:
